@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;700&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    font-family: "Teko";
+}
+
+.standard-container {
+    background-color: rgb(65, 65, 65);
+    padding: 1rem 0;
+    margin: 0 auto 0.5rem auto;
+    width: 80vw;
+}
+
+.dark-container {
+    background-color: rgb(26, 26, 26);
+    padding: 1rem 1rem;
+    border-radius: 40px;
+}
+
+.combat-toggle-container {
+    display: flex;
+    justify-content: center;
+}
+
+.combat-toggle {
+    background-color: rgb(126, 126, 126);
+    padding: 0 1rem;
+    font-size: 4rem;
+    font-family: "Teko";
+    border: none;
+    border-radius: 2rem;
+}
+
+.combat-toggle:active {
+    background-color: rgb(175, 175, 175);
+}
+
+.combat-status-container {
+    padding: 0;
+}
+
+.combat-status {
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-align: center;
+    color: rgb(30, 189, 30);
+}
+
+.shield-boost-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: auto 140px auto;
+    text-align: center;
+}
+
+.shield-boost-text {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.shield-bonus {
+    font-weight: 700;
+    color: rgb(70, 134, 255);
+}
+
+.energy-cell-img {
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 128px;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+.energy-cell-img:hover {
+    border: 4px solid rgb(70, 134, 255);
+}
+
+.energy-cell-img:active {
+    width: 120px;
+}
+
+.shield-boost-cooldown {
+    font-size: 3rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+    color: rgb(30, 189, 30);
+    animation-name: shield-boost;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shield-boost {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+.main-combat-window {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.your-ship-container, .enemy-ship-container {
+    width: 30%;
+    color: white;
+}
+
+.main-combat-window p {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.your-ship-name {
+    color: rgb(30, 189, 30);
+}
+
+.enemy-ship-name {
+    color: red;
+}
+
+.your-shield-points, .enemy-shield-points {
+    font-weight: 700;
+    color: rgb(70, 134, 255);
+}
+
+.your-hull-points, .enemy-hull-points {
+    font-weight: 700;
+    color: rgb(212, 177, 20);
+}
