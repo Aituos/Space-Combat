@@ -165,11 +165,13 @@ function Toggle_Combat() {
     if(combat_status_ELEM.innerHTML == "Combat Inactive" && enemy_hull_damage_taken != enemy_hull_max_points && your_hull_damage_taken != your_hull_max_points){
         combat_status_ELEM.innerHTML = "Combat Active";
         combat_status_ELEM.style.color = "red";
+        combat_toggle_ELEM.innerHTML = "Stop Combat";
         combat_interval = setInterval(Combat_Tick, 1000);
     }
     else {
         combat_status_ELEM.innerHTML = "Combat Inactive";
         combat_status_ELEM.style.color = "rgb(30, 189, 30)";
+        combat_toggle_ELEM.innerHTML = "Start Combat";
         clearInterval(combat_interval);
     }
     
