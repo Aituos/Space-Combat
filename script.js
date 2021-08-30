@@ -36,7 +36,6 @@ let your_hull_max_points = null;
 let your_hull_damage_taken = null;
 let your_damage_min = null;
 let your_damage_max = null;
-let your_shield_cells = null;
 
 // Energy Cell
 
