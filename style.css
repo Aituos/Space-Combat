@@ -26,33 +26,11 @@ body {
     border-radius: 40px;
 }
 
-.combat-toggle-container {
+.interactives-container {
+    margin: 1rem auto 0 auto;
+    width: 80vw;
     display: flex;
-    justify-content: center;
-}
-
-.combat-toggle {
-    background-color: rgb(126, 126, 126);
-    padding: 0 1rem;
-    font-size: 4rem;
-    font-family: "Teko";
-    border: none;
-    border-radius: 2rem;
-}
-
-.combat-toggle:active {
-    background-color: rgb(175, 175, 175);
-}
-
-.combat-status-container {
-    padding: 0;
-}
-
-.combat-status {
-    text-transform: uppercase;
-    font-size: 3rem;
-    text-align: center;
-    color: rgb(30, 189, 30);
+    gap: 0.5rem;
 }
 
 .shield-boost-container {
@@ -75,7 +53,6 @@ body {
 }
 
 .energy-cell-img {
-    display: block;
     margin: 0 auto 1rem auto;
     width: 128px;
     border: 4px solid white;
@@ -104,6 +81,33 @@ body {
     0% {transform: scale(1);}
     50% {transform: scale(1.1);}
     100% {transform: scale(1);}
+}
+
+.combat-toggle-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.combat-toggle {
+    background-color: rgb(126, 126, 126);
+    padding: 0 1rem;
+    font-size: 4rem;
+    font-family: "Teko";
+    border: none;
+    border-radius: 2rem;
+}
+
+.combat-toggle:active {
+    background-color: rgb(175, 175, 175);
+}
+
+.combat-status {
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-align: center;
+    color: rgb(30, 189, 30);
 }
 
 .main-combat-window {
