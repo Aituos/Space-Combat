@@ -88,7 +88,7 @@ function Generate_Enemy() {
     }
     else {
         enemy_damage_max = Return_Random_Between(enemy_damage_min + 1,130);
-    }
+    };
 
     // We update enemy damage display here, since we only have to do it once per enemy
 
@@ -125,7 +125,7 @@ function Combat_Tick() {
     }
     else {
         enemy_shield_damage_taken += your_hit;
-    }
+    };
 
     // Enemy hits player, shield first
     enemy_hit = Return_Random_Between(enemy_damage_min,enemy_damage_max);
@@ -139,7 +139,7 @@ function Combat_Tick() {
     }
     else {
         your_shield_damage_taken += enemy_hit;
-    }
+    };
 
     // If the hull (yours or enemies') reaches zero, we stop combat
 
@@ -154,14 +154,11 @@ function Combat_Tick() {
 
     Update_Display();
 
-
-
-
 };
 
 function Toggle_Combat() {
 
-    if(combat_status_ELEM.innerHTML == "Combat Inactive" && enemy_hull_damage_taken != enemy_hull_max_points && your_hull_damage_taken != your_hull_max_points){
+    if(combat_status_ELEM.innerHTML == "Combat Inactive" && enemy_hull_damage_taken != enemy_hull_max_points && your_hull_damage_taken != your_hull_max_points) {
         combat_status_ELEM.innerHTML = "Combat Active";
         combat_status_ELEM.style.color = "red";
         combat_toggle_ELEM.innerHTML = "Stop Combat";
@@ -172,27 +169,28 @@ function Toggle_Combat() {
         combat_status_ELEM.style.color = "rgb(30, 189, 30)";
         combat_toggle_ELEM.innerHTML = "Start Combat";
         clearInterval(combat_interval);
-    }
+    };
     
 };
 
 function Energy_Cell() {
 
-    if(shield_boost_cooldown_ELEM.innerHTML == "Ready"){
-    energy_cell_img_ELEM.style.opacity = "20%";
-    energy_cell_img_ELEM.style.border = "none";
-    shield_boost_cooldown_ELEM.innerHTML = "10s";
-    shield_boost_cooldown_ELEM.style.color = "red";
-    shield_boost_cooldown_ELEM.style.animationName = "none";
+    if(shield_boost_cooldown_ELEM.innerHTML == "Ready") {
+        energy_cell_img_ELEM.style.opacity = "20%";
+        energy_cell_img_ELEM.style.border = "none";
+        shield_boost_cooldown_ELEM.innerHTML = "10s";
+        shield_boost_cooldown_ELEM.style.color = "red";
+        shield_boost_cooldown_ELEM.style.animationName = "none";
 
-    energy_cell_cooldown_interval = setInterval(Energy_Cell_Tick, 1000);
+        energy_cell_cooldown_interval = setInterval(Energy_Cell_Tick, 1000);
 
-    energy_cell_timer = 10;
+        energy_cell_timer = 10;
 
-    your_shield_damage_taken -= 500;
-    if(your_shield_damage_taken < 0) {
-        your_shield_damage_taken = 0;
-    };
+        your_shield_damage_taken -= 500;
+
+        if(your_shield_damage_taken < 0) {
+            your_shield_damage_taken = 0;
+        };
     
     Update_Display();
 
@@ -201,6 +199,7 @@ function Energy_Cell() {
 };
 
 function Energy_Cell_Tick() {
+
     if(energy_cell_timer > 0) {
         energy_cell_timer--;
         shield_boost_cooldown_ELEM.innerHTML = energy_cell_timer + "s";
@@ -214,6 +213,7 @@ function Energy_Cell_Tick() {
 
         clearInterval(energy_cell_cooldown_interval);
     };
+
 };
 
 
